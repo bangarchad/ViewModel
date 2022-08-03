@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/introFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.example.viewmodel.intro.IntroFragment"
+        android:label="IntroFragment" >
+        <action
+            android:id="@+id/action_introFragment_to_scoringFragment"
+            app:destination="@id/scoringFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoringFragment"
+        android:name="com.example.viewmodel.score.ScoringFragment"
+        android:label="ScoringFragment" >
+        <argument
+            android:name="team1"
+            app:argType="string" />
+        <argument
+            android:name="team2"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_scoringFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.example.viewmodel.finish.FinishFragment"
+        android:label="fragment_finish"
+        tools:layout="@layout/fragment_finish" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
